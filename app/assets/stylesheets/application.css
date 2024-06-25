@@ -1,0 +1,49 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+  /*<img id='img-home' src="<%= asset_path 'home.jpg' %>" alt="Home Image">*/
+
+
+ .home {
+  background-color: black;
+  color: white;
+  background-position: 50% 0.5px;
+  height: 545px;
+  z-index: 2;
+}
+.text-img{
+  position: relative;
+  z-index: 2; /* Texto à frente da imagem */
+}
+#text-img{
+  position: relative;
+  z-index: 2; /* Texto à frente da imagem */
+}
+
+#img-home{
+  position: absolute;
+  top: 50%; /* Posiciona no centro vertical */
+  right: 0; /* Posiciona no lado direito */
+  left: 1;
+  transform: translate(0, -50%); /* Ajusta para alinhar no centro vertical */
+  max-width: 60%; /* Define a largura máxima da imagem */
+  z-index: 0; /* Garante que a imagem esteja acima do fundo */
+  display: flex;
+  padding-bottom: 20px;
+  opacity: 0.4;
+  height: 525px;
+}
+
+
