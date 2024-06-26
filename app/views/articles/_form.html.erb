@@ -10,33 +10,37 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.text_field :image %>
+  <form class="row g-3">
+  <div class="col-md-6">
+    <label for="inputTitulo" class="form-label">Titulo</label>
+    <%= form.text_field :title, class:"form-control", placeholder: "Título"%>
   </div>
-
-  <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+  <div class="row">
+  <div class="col-md-6">
+      <label for="inputAutor" class="form-label">Autor</label>
+      <%= form.text_field :author, class:"form-control", placeholder: "Autor"%>
   </div>
-
-  <div>
-    <%= form.label :author, style: "display: block" %>
-    <%= form.text_field :author %>
+    <div class="col-md-6">
+      <label for="inputCategory" class="form-label">Categoria</label>
+      <%= form.text_field :category, class:"form-control", placeholder: "Digite a categoria"%>
+    </div>
   </div>
-
-  <div>
-    <%= form.label :category, style: "display: block" %>
-    <%= form.text_field :category %>
+  <div class="col-12">
+    <label for="inputCategory" class="form-label">Link da Capa do Artigo</label>
+    <%= form.text_field :image, class:"form-control", placeholder: "Imagem de Capa"%>
   </div>
-
-  <div>
-    <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <div class="col-12">
+    <label for="inputContent" class="form-label">Conteúdo</label>
+    <%= form.text_area :content, class:"form-control", placeholder: "Digite sua descrição"%>
   </div>
-
-  <div>
-    <%= form.submit %>
+  <br>
+  <div class="row">
+    <div class="col-1">
+       <%= form.submit "Concluido", class: "btn btn-success" %>
+    </div>
+     <div class="col-1" id="cancel-button" style="padding-left: 20px;">
+    <%= link_to 'Cancelar', articles_path, class:"btn btn-danger" %>
+    </div>
   </div>
+  </form>
 <% end %>

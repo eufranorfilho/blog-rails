@@ -1,10 +1,16 @@
-<p style="color: green"><%= notice %></p>
-
+<% if (n = notice).present? %><p class="alert alert-warning"><%= notice %></p>
+<% end %>
+<h1>Tem certeza que deseja remover este artigo?</h1>
 <%= render @article %>
 
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
 
-  <%= button_to "Destroy this article", @article, method: :delete %>
+<div class="row">
+    <div class="col-1">
+      <%= button_to "Remover", @article, method: :delete, class:"btn btn-danger" %>
+    </div>
+     <div class="col-1" style=" padding-left: 15px;" id="cancel-button">
+    <%= link_to 'Cancelar', articles_path, class:"btn btn-primary" %>
+    </div>
 </div>
+
+
