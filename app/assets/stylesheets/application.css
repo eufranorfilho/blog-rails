@@ -22,6 +22,10 @@
   background-position: 50% 0.5px;
   height: 545px;
   z-index: 2;
+  
+}
+.card{
+  margin-top: 15px;
 }
 .text-img{
   position: relative;
@@ -43,7 +47,7 @@
   display: flex;
   padding-bottom: 20px;
   opacity: 0.4;
-  height: 525px;
+  height: 520px;
 }
 
 #cancel-button{

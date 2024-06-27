@@ -6,7 +6,7 @@
   <%= link_to new_article_path, class: 'btn btn-sm btn-default' do %>
     <i class="fa fa-plus"></i> Adicionar
   <% end %>
-   
+   <a class="btn btn-sm btn-default" href="<%= root_path %>"><i class="fa fa-home"></i> Home</a>
 </h1>
 
 <div id="articles">
@@ -24,7 +24,7 @@
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title"><%= article[:title]%></h5>
-              <p class="card-text"><%= article[:content]%></p>
+              <p class="card-text"><%= truncate(article.content, length: 150, omission: '...')%></p>
               <ul class="list-group list-group-flush">
                 <li class="list-group-item">Autor: <%= article[:author]%></li>
                 <li class="list-group-item">Categoria: <%= article[:category]%></li>
