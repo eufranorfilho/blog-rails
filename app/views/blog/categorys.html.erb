@@ -1,0 +1,11 @@
+<h1>Categorias Disponíveis</h1>
+<ul>
+  <% if @categories.any? %>
+    <% @categories.each do |category| %>
+      <li><%= link_to category, blog_category_path(c: category) %></li>
+    <% end %>
+  <% else %>
+    <li>Nenhuma categoria encontrada.</li>
+  <% end %>
+</ul>
+<a class="btn btn-primary" href="<%= root_path %>"> Home </a>
