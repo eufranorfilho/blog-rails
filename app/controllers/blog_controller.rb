@@ -1,4 +1,5 @@
 class BlogController < ApplicationController
+  before_action :register_view
   def index
     @article = Article.all.shuffle
     @categories = Article.select(:category).distinct
@@ -22,5 +23,11 @@ class BlogController < ApplicationController
   def search
     @articles = Article.search(params[:q])
   end
+  
+  private
+  def register_view
+    View.create(remote_ip: request.remote_ip)
+  end
+
 
 end

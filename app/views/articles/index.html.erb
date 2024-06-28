@@ -6,7 +6,8 @@
   <%= link_to new_article_path, class: 'btn btn-sm btn-default' do %>
     <i class="fa fa-plus"></i> Adicionar
   <% end %>
-   <a class="btn btn-sm btn-default" href="<%= root_path %>"><i class="fa fa-home"></i> Home</a>
+   <a class="btn btn-sm btn-default" href="<%= root_path %>"><i class="fa fa-home"></i> Home</a> 
+   <a class="btn btn-sm btn-default"><i class="fa fa-count"></i> <span style="font-weight: bold;"> Contagem de visualizações: </span> <%= pluralize View.count, 'visualização', 'visualizações'%></a>
 </h1>
 
 <div id="articles">
