@@ -1,0 +1,29 @@
+<h1>Resultado da busca para: <%= params[:q] %></h1>
+
+<% if @articles.present? %>
+  <% @articles.each do |article| %>
+    <div class="card mb-3">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="<%= article.image %>" class="img-fluid rounded-start" alt="Imagem do artigo">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title"><%= article.title %></h5>
+            <p class="card-text"><%= truncate(article.content, length: 100) %></p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><%= article.author %></li>
+              <li class="list-group-item"><%= article.category %></li>
+            </ul>
+            <%= link_to 'Leia mais', blog_article_path(article), class: 'btn btn-primary mt-3' %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p>Nenhum artigo encontrado</p>
+<% end %>
+
+<a class="btn btn-primary" href="<%= root_path %>"> Home </a>
+

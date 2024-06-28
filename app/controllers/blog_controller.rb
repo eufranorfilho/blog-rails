@@ -18,5 +18,9 @@ class BlogController < ApplicationController
   def categorys
     @categories = Article.pluck(:category).uniq
   end
+  
+  def search
+    @articles = Article.search(params[:q])
+  end
 
 end

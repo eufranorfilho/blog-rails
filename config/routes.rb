@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   root "blog#index"
   get 'blog/articles/:id', to: 'blog#articles', as: 'blog_article'
   get 'blog/categorys', to: 'blog#categorys', as: 'blog_categorys'
+  get 'blog/busca', to: 'blog#search'
 
 end
